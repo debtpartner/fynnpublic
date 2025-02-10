@@ -70,6 +70,7 @@ export default defineConfig({
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
+        '@tsconfig': path.resolve(__dirname, 'tsconfig.json'),
       },
     },
   },
