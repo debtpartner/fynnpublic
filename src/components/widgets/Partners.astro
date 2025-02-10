@@ -1,0 +1,102 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+
+const partners = [
+  { name: "McKinsey", logo: "/logos/mckinsey.svg" },
+  { name: "Hubspot", logo: "/logos/hubspot.svg" },
+  { name: "Henkel", logo: "/logos/henkel.svg" },
+  { name: "Quickbooks", logo: "/logos/quickbooks.svg" },
+  { name: "Xero", logo: "/logos/xero.svg" },
+  { name: "LVMH", logo: "/logos/lvmh.svg" },
+  { name: "Meta", logo: "/logos/meta.svg" },
+  { name: "Stripe", logo: "/logos/stripe.svg" },
+  { name: "LexOffice", logo: "/logos/lexoffice.svg" },
+  { name: "Mars", logo: "/logos/mars.svg" },
+  { name: "Razor Group", logo: "/logos/razor.svg" },
+];
+const repeatedLogos = Array(3).fill(partners).flat();
+---
+
+<style>
+.group {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.dark .group {
+  background-color: transparent;
+}
+
+.inner-content {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
+
+.partner-logo {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.partner-logo:hover {
+  filter: none;
+}
+
+.dark .partner-logo:hover {
+  filter: grayscale(100%);
+  pointer-events: none; /* Disable hover effect in dark mode */
+}
+
+@keyframes slide-continuous {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-rtl {
+  display: flex;
+  white-space: nowrap;
+  animation: slide-continuous 30s linear infinite;
+  will-change: transform;
+}
+
+.space-x-16 > * {
+  margin-right: 2rem;
+}
+</style>
+
+<WidgetWrapper id="partners" containerClass="py-16">
+  <!-- Title and subtitle -->
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl font-heading">
+      Trusted by Industry Leaders
+    </h2>
+    <p class="mt-4 text-xl text-gray-600 dark:text-gray-400">
+      Partners and experience from leading companies
+    </p>
+  </div>
+
+  <!-- Full-width static frame with scrolling logos -->
+  <div class="group w-full">
+    <div class="inner-content">
+      <div class="animate-rtl space-x-16">
+        {repeatedLogos.map((partner, index) => (
+          <div class="flex-none w-40" key={index}>
+            <img
+              class="partner-logo h-12 w-full object-contain"
+              src={partner.logo}
+              alt={`${partner.name} logo`}
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>

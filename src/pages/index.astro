@@ -1,0 +1,196 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Partners from '~/components/widgets/Partners.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { HeroAnimation } from '~/components/widgets/HeroAnimation';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Fynn - AI Automation for Smarter Debt Collection',
+  ignoreTitleTemplate: true,
+};
+
+// Primary features for the first feature grid:
+const features = [
+  {
+    title: "AI Voice + Multi-Channel Outreach",
+    description: "Leverage intelligent voice agents for phone outreach, integrated with follow-ups across email, WhatsApp, SMS, and social media.",
+    icon: "tabler:phone-call"
+  },
+  {
+    title: "Reduce Costs & Overhead",
+    description: "Automate repetitive tasks and drastically cut the need for large, high-churn call centers, saving time and operational costs.",
+    icon: "tabler:coin"
+  },
+  {
+    title: "24/7 Personalized Engagement",
+    description: "Engage debtors around the clock with tailored messaging that adapts to their behavior and circumstances.",
+    icon: "tabler:clock"
+  },
+  {
+    title: "Regulatory Compliance",
+    description: "Navigate GDPR and other privacy rules effortlessly with built-in compliance for Europe, the US, and beyond.",
+    icon: "tabler:shield-check"
+  },
+  {
+    title: "Data-Driven Insights",
+    description: "Analyze real-time dashboards to optimize strategies, refine risk assessment, and improve recovery rates over time.",
+    icon: "tabler:chart-dots"
+  },
+  {
+    title: "Seamless Integration",
+    description: "Connect easily with existing systems using flexible APIs. Integrated with Twilio and more for a smooth workflow.",
+    icon: "tabler:plug-connected"
+  }
+];
+
+// Secondary features or “Key Capabilities” for an optional second section:
+const keyCapabilities = [
+  {
+    title: 'Scalable AI Model',
+    description:
+      'Trained on exclusive datasets, continuously improving as more debtor records flow in, ensuring maximum recovery results.',
+    icon: 'tabler:database',
+  },
+  {
+    title: 'Ethical & Empathetic Approach',
+    description:
+      'We respect debtors with empathetic communication—critical for preserving long-term relationships and brand reputation.',
+    icon: 'tabler:users',
+  },
+  {
+    title: 'Cross-Border Expertise',
+    description:
+      'With deep knowledge of EU and US markets, our platform handles localization challenges from day one.',
+    icon: 'tabler:world',
+  },
+];
+
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request Early Access',
+        href: '/contact',
+        target: '_blank',
+        icon: 'tabler:rocket',
+      },
+      { text: 'Talk to Us', href: '/contact' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <HeroAnimation client:load />
+    </Fragment>
+    <Fragment slot="title">
+      Smarter Debt Collection <span class="text-accent dark:text-white highlight">Powered by AI</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Automate outreach via intelligent voice agents and personalized follow-ups across email, SMS, WhatsApp, and more.
+        Reduce overhead, stay compliant, and maximize recovery rates with Fynn.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Features: Primary -->
+  <WidgetWrapper id="features" containerClass="py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl font-heading">
+        Why Fynn?
+      </h2>
+      <p class="mt-4 text-xl text-muted dark:text-gray-400 font-medium">
+        Modernize your debt collection process with AI-driven automation.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {features.map((feature) => (
+        <div class="group relative h-full" key={feature.title}>
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-300"></div>
+          <div class="relative h-full p-8 bg-white dark:bg-[#030621] rounded-lg ring-1 ring-gray-200 dark:ring-gray-800">
+            <div class="inline-flex p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
+              <Icon name={feature.icon} class="w-6 h-6 text-primary dark:text-blue-400" />
+            </div>
+            <h3 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white group-hover:text-primary">
+              {feature.title}
+            </h3>
+            <p class="mt-4 text-gray-500 dark:text-gray-400">
+              {feature.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </WidgetWrapper>
+
+  <!-- Stats Section (Optional Placeholder) -->
+  <Stats
+    stats={[
+      { title: 'Recovery Uplift', amount: '+35%' },
+      { title: 'Overhead Reduction', amount: '-50%' },
+      { title: 'Faster Resolution', amount: '24/7' },
+      { title: 'Regulatory Coverage', amount: 'Global' },
+    ]}
+  />
+
+  <!-- Optional Secondary Features Section -->
+  <WidgetWrapper containerClass="py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl font-heading">
+        Key Capabilities
+      </h2>
+      <p class="mt-4 text-xl text-muted dark:text-gray-400 font-medium">
+        Built to scale, built to comply, built for better results.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {keyCapabilities.map((item) => (
+        <div class="group relative h-full" key={item.title}>
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-300"></div>
+          <div class="relative h-full p-8 bg-white dark:bg-[#030621] rounded-lg ring-1 ring-gray-200 dark:ring-gray-800">
+            <div class="inline-flex p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
+              <Icon name={item.icon} class="w-6 h-6 text-primary dark:text-blue-400" />
+            </div>
+            <h3 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white group-hover:text-primary">
+              {item.title}
+            </h3>
+            <p class="mt-4 text-gray-500 dark:text-gray-400">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </WidgetWrapper>
+
+  <!-- Partners Section (You can highlight Debtist.de if desired) -->
+  <Partners />
+
+  <!-- Call To Action -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request Early Access',
+        href: '/contact',
+        'data-astro-reload': true,
+        icon: 'tabler:rocket',
+      },
+      {
+        text: 'Free Consultation',
+        href: '/contact',
+        'data-astro-reload': true,
+      },
+    ]}
+    title="Streamline Your Debt Collection with AI"
+    subtitle="Join forward-thinking agencies and enterprises modernizing their processes with Fynn."
+  />
+</Layout>

@@ -1,0 +1,156 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Solutions',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    tagline="Our Solutions"
+    title="Transform Your Debt Collection Process"
+    subtitle="Discover how Fynn's AI-powered platform can revolutionize your accounts receivables management"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started Free',
+        href: '/signup',
+        target: '_blank',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Fynn Solutions Hero Image',
+    }}
+  />
+
+  <!-- Features Widget *************** -->
+  <Features
+    id="features"
+    tagline="Features"
+    title="Everything you need to succeed"
+    subtitle="Fynn provides a comprehensive suite of tools to streamline your debt collection process"
+    items={[
+      {
+        title: 'AI-Powered Communication',
+        description:
+          'Automated, personalized communication that maintains professionalism while maximizing response rates',
+        icon: 'tabler:message-chatbot',
+      },
+      {
+        title: 'Smart Payment Plans',
+        description:
+          'Intelligent algorithms that create optimal payment plans based on debtor behavior and history',
+        icon: 'tabler:calculator',
+      },
+      {
+        title: 'Real-time Analytics',
+        description:
+          'Comprehensive dashboards providing insights into collection performance and debtor behavior',
+        icon: 'tabler:chart-dots',
+      },
+      {
+        title: 'Legal Compliance',
+        description:
+          'Built-in compliance checks and documentation to ensure adherence to regulations',
+        icon: 'tabler:gavel',
+      },
+      {
+        title: 'Seamless Integration',
+        description:
+          'Easy integration with your existing accounting and CRM systems',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: 'Multi-channel Collection',
+        description:
+          'Reach debtors through their preferred communication channels',
+        icon: 'tabler:devices',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    tagline="Customer-Centric Approach"
+    title="Preserve Customer Relationships"
+    items={[
+      {
+        title: 'Personalized Communication',
+        description:
+          'AI-driven communication that adapts to each customer\'s situation and preferences',
+      },
+      {
+        title: 'Flexible Payment Options',
+        description:
+          'Offer various payment methods and plans to accommodate different financial situations',
+      },
+      {
+        title: 'Professional Interaction',
+        description:
+          'Maintain brand reputation with respectful and professional collection practices',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Customer Relationship Image',
+    }}
+  />
+
+  <!-- Steps Widget ****************** -->
+  <Steps
+    title="Get started with Fynn"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Sign Up</span>',
+        description:
+          'Create your account and connect your systems',
+        icon: 'tabler:user-plus',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Configure</span>',
+        description:
+          'Set up your communication preferences and collection strategies',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Launch</span>',
+        description:
+          'Start recovering debts more efficiently with AI-powered automation',
+        icon: 'tabler:rocket',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started Free',
+        href: '/signup',
+        target: '_blank',
+      },
+      {
+        text: 'Request Demo',
+        href: '/demo',
+        target: '_blank',
+      },
+    ]}
+    title="Ready to transform your collections?"
+    subtitle="Join thousands of businesses already using Fynn to optimize their accounts receivables."
+  />
+</Layout>

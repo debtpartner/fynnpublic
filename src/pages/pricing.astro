@@ -1,0 +1,242 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pricing - Fynn',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    title="Transparent Pricing"
+    subtitle="No hidden fees. No surprises. Just straightforward pricing that scales with your needs."
+  />
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    title="Our Pricing Plans"
+    subtitle="Choose the perfect plan for your business needs"
+    prices={[
+
+/*
+      {
+        title: 'starter',
+        subtitle: 'Perfect for small businesses',
+        price: 0,
+        period: 'per successful collection',
+        items: [
+          {
+            description: 'Pre-Court Collection'
+          },
+          {
+            description: 'AI-Powered Communication'
+          },
+          {
+            description: 'Basic Analytics Dashboard'
+          },
+          {
+            description: 'Email Support'
+          }
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get Started Free',
+          href: '/signup'
+        }
+      },
+*/
+      {
+        title: 'professional',
+        subtitle: 'Ideal for startups and small businesses',
+        price: '0',
+        period: 'commission-based',
+        items: [
+        {
+            description: 'Pre-Court Collection'
+          },
+          {
+            description: 'AI-Powered Communication'
+          },
+          {
+            description: 'Basic Analytics Dashboard'
+          },
+          {
+            description: 'Dedicated Account Manager'
+          },
+          {
+            description: 'Court Actions Support'
+          },
+          {
+            description: 'Advanced Analytics'
+          },
+          {
+            description: 'Integration Support'
+          },
+          {
+            description: 'API Access'
+          }
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Start for free',
+          href: '/signup'
+        },
+        hasRibbon: false,
+        ribbonTitle: 'popular'
+      },
+      {
+        title: 'enterprise',
+        subtitle: 'Ideal for medium to large businesses',
+        price: 'Custom',
+        period: 'custom pricing',
+        items: [
+          {
+            description: 'Everything in Professional plus:'
+          },
+          {
+            description: 'Individual Solutions for all your needs'
+          },
+          {
+            description: 'Custom Analytics & Reporting'
+          },
+          {
+            description: 'Liquidity Management and Cashflow Forecasting Tools'
+          },
+          {
+            description: 'Custom Integration'
+          },          
+          {
+            description: 'VIP Treatment'
+          },
+          {
+            description: '24/7 Premium Support'
+          }
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Contact us',
+          href: '/contact'
+        }
+      }
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Additional Services"
+    subtitle="Optional services available across all plans"
+    columns={2}
+    items={[
+      {
+        title: 'Legal Advice',
+        description: 'Expert legal consultation for complex cases',
+        icon: 'tabler:gavel'
+      },
+      {
+        title: 'Address Investigation',
+        description: 'Advanced debtor tracing services',
+        icon: 'tabler:search'
+      },
+      {
+        title: 'Custom Reporting',
+        description: 'Tailored reports for your specific needs',
+        icon: 'tabler:report'
+      },
+      {
+        title: 'Training & Support',
+        description: 'Comprehensive training for your team',
+        icon: 'tabler:school'
+      }
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Getting started is easy"
+    items={[
+      {
+        title: 'Contact us today',
+        description: 'Sign up for a free consultation',
+        icon: 'tabler:user-plus'
+      },
+      {
+        title: 'Set-up your account',
+        description: 'Integrate with your existing software',
+        icon: 'tabler:plug-connected'
+      },
+      {
+        title: 'Start Recovering',
+        description: 'Let our AI maximize your collections',
+        icon: 'tabler:rocket'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image'
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Pricing FAQs"
+    subtitle="Answers to common questions about our pricing"
+    columns={1}
+    items={[
+      {
+        title: 'Are there any hidden fees?',
+        description: 'No, we believe in complete transparency. You will only pay for what you use.'
+      },
+      {
+        title: 'Can I switch between plans?',
+        description: 'Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.'
+      },
+      {
+        title: 'What payment methods do you accept?',
+        description: 'We accept all major credit cards, bank transfers, and can arrange other payment methods for Enterprise customers.'
+      },
+      {
+        title: 'Do you offer a free trial?',
+        description: 'Yes, you can start with for free and you will only pay for succesfull collections.'
+      },
+      {
+        title: 'What is included in the Enterprise plan?',
+        description: 'Enterprise plans are customized to your needs and include dedicated support, custom integrations, and premium features.'
+      }
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Ready to get started?"
+    subtitle="Join thousands of businesses already using Fynn to optimize their accounts receivables."
+      actions={[
+      {
+        variant: 'primary',
+        text: 'Start for Free',
+        href: '/contact',
+        'data-astro-reload': true, // Reload the page when clicked
+        // target: '_blank',
+        icon: 'tabler:rocket',
+      },
+      {
+        text: 'Free Consultation',
+        href: '/contact',
+        'data-astro-reload': true, // Reload the page when clicked
+      },
+    ]}
+  />
+</Layout>

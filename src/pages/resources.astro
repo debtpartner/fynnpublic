@@ -1,0 +1,121 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Resources',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    tagline="Resources"
+    title="Knowledge Hub"
+    subtitle="Explore our collection of guides, case studies, and best practices to optimize your debt collection process"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started Free',
+        href: '/signup',
+        target: '_blank',
+      },
+      { text: 'Contact Sales', href: '/contact' },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title="Resource Categories"
+    subtitle="Everything you need to succeed with Fynn"
+    items={[
+      {
+        title: 'Documentation',
+        description: 'Detailed guides and API documentation for seamless integration and usage',
+        icon: 'tabler:book',
+      },
+      {
+        title: 'Case Studies',
+        description: 'Real success stories from businesses that transformed their collections with Fynn',
+        icon: 'tabler:template',
+      },
+      {
+        title: 'Best Practices',
+        description: 'Industry insights and recommended approaches for optimal collection strategies',
+        icon: 'tabler:star',
+      },
+      {
+        title: 'Video Tutorials',
+        description: 'Step-by-step video guides to help you make the most of Fynn's features',
+        icon: 'tabler:video',
+      },
+      {
+        title: 'Webinars',
+        description: 'Regular online sessions covering industry trends and product updates',
+        icon: 'tabler:presentation',
+      },
+      {
+        title: 'Community Forum',
+        description: 'Connect with other users and share experiences',
+        icon: 'tabler:messages',
+      },
+    ]}
+  />
+
+  <!-- Latest Posts Widget *********** -->
+  <BlogLatestPosts
+    title="Latest Articles"
+    information={`Stay up to date with the latest trends and best practices in debt collection and accounts receivable management.`}
+  />
+
+  <!-- FAQs Widget ******************* -->
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Find quick answers to common questions about Fynn's platform"
+    items={[
+      {
+        title: 'How does Fynn's AI improve collection rates?',
+        description:
+          'Fynn's AI analyzes payment patterns and customer behavior to optimize communication timing, channel selection, and payment plan offers, resulting in higher collection rates.',
+      },
+      {
+        title: 'Is Fynn compliant with debt collection regulations?',
+        description:
+          'Yes, Fynn's platform is built with compliance in mind, incorporating FDCPA guidelines and other relevant regulations to ensure legal compliance.',
+      },
+      {
+        title: 'How long does it take to implement Fynn?',
+        description:
+          'Most businesses can be up and running with Fynn within a few days. Our team provides comprehensive support during the implementation process.',
+      },
+      {
+        title: 'Can Fynn integrate with my existing systems?',
+        description:
+          'Yes, Fynn offers robust API integration capabilities and pre-built connectors for popular accounting and CRM systems.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started Free',
+        href: '/signup',
+        target: '_blank',
+      },
+      {
+        text: 'Request Demo',
+        href: '/demo',
+        target: '_blank',
+      },
+    ]}
+    title="Ready to optimize your collections?"
+    subtitle="Join thousands of businesses already using Fynn to transform their accounts receivables."
+  />
+</Layout>

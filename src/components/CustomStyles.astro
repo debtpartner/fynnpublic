@@ -1,0 +1,78 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource/pt-serif';
+---
+
+<style is:inline>
+  :root {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: 'PT Serif';
+    --aw-font-heading: var(--aw-font-serif);
+
+    --aw-color-primary: rgb(1 97 239);
+    --aw-color-primary-50: rgb(239 246 255);
+    --aw-color-primary-100: rgb(219 234 254);
+    --aw-color-primary-200: rgb(191 219 254);
+    --aw-color-primary-300: rgb(147 197 253);
+    --aw-color-primary-400: rgb(96 165 250);
+    --aw-color-primary-500: rgb(59 130 246);
+    --aw-color-primary-600: rgb(37 99 235);
+    --aw-color-primary-700: rgb(29 78 216);
+    --aw-color-primary-800: rgb(30 64 175);
+    --aw-color-primary-900: rgb(30 58 138);
+    --aw-color-secondary: rgb(1 84 207);
+    --aw-color-accent: rgb(109 40 217);
+
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: rgb(16 16 16);
+    --aw-color-text-muted: rgb(16 16 16 / 66%);
+    --aw-color-bg-page: rgb(247 247 247);
+
+    --aw-color-bg-page-dark: rgb(3 6 32);
+
+    ::selection {
+      background-color: lavender;
+    }
+  }
+
+  .dark {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: 'PT Serif';
+    --aw-font-heading: var(--aw-font-serif);
+
+    --aw-color-primary: rgb(1 97 239);
+    --aw-color-primary-50: rgb(239 246 255);
+    --aw-color-primary-100: rgb(219 234 254);
+    --aw-color-primary-200: rgb(191 219 254);
+    --aw-color-primary-300: rgb(147 197 253);
+    --aw-color-primary-400: rgb(96 165 250);
+    --aw-color-primary-500: rgb(59 130 246);
+    --aw-color-primary-600: rgb(37 99 235);
+    --aw-color-primary-700: rgb(29 78 216);
+    --aw-color-primary-800: rgb(30 64 175);
+    --aw-color-primary-900: rgb(30 58 138);
+    --aw-color-secondary: rgb(1 84 207);
+    --aw-color-accent: rgb(109 40 217);
+
+    --aw-color-text-heading: rgb(247, 248, 248);
+    --aw-color-text-default: rgb(229 236 246);
+    --aw-color-text-muted: rgb(229 236 246 / 66%);
+    --aw-color-bg-page: rgb(3 6 32);
+
+    ::selection {
+      background-color: black;
+      color: snow;
+    }
+  }
+
+  /* Add letter spacing for PT Serif */
+  .font-heading {
+    letter-spacing: 0.01em !important;
+  }
+
+  /* Ensure letter spacing is applied to all headings */
+  h1, h2, h3, h4, h5, h6,
+  .text-3xl, .text-4xl, .text-5xl, .text-6xl {
+    letter-spacing: 0.01em !important;
+  }
+</style>

@@ -1,0 +1,187 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata} client:load>
+  <!-- HeroText Widget ******************* -->
+
+
+  <HeroText tagline="Contact" 
+  title="Let's Connect!" 
+  subtitle="Tell us about your needs and maximize your debt collection recovery rates with Fynn"/>
+
+<!-- Include the Calendly script -->
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" defer></script>
+
+<!-- Inline widget container -->
+<div id="calendly-inline-widget" style="width: 100%; height: calc(100vh - 50px); max-width: 1200px; margin: 0 auto;"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    Calendly.initInlineWidget({
+      url: "https://calendly.com/fynnai/30min", // Replace YOURLINK with your actual Calendly link
+      parentElement: document.getElementById("calendly-inline-widget"),
+      prefill: {
+        name: "", // Optional prefill information
+        email: "",
+      },
+      utm: {
+        utmCampaign: "Spring_Sale", // Optional UTM parameters
+        utmSource: "newsletter",
+        utmMedium: "email",
+      },
+    });
+  });
+</script>
+
+
+
+
+
+  <ContactUs
+    id="form"
+    title="Drop us a message today!"
+    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="Our support team typically responds within 24 business hours."
+  />
+*/
+
+<div class="tally-form-wrapper">
+  <div class="tally-form-container">
+    <iframe 
+      data-tally-src="https://tally.so/embed/wLaj1G?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+      loading="lazy" 
+      width="100%" 
+      height="585" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0" 
+      title="Contact form">
+    </iframe>
+  </div>
+</div>
+
+<script>
+  var d = document, 
+      w = "https://tally.so/widgets/embed.js", 
+      v = function() {
+        if (typeof Tally !== "undefined") {
+          Tally.loadEmbeds();
+        } else {
+          d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e) {
+            e.src = e.dataset.tallySrc;
+          });
+        }
+      };
+  
+  if (typeof Tally !== "undefined") {
+    v();
+  } else if (d.querySelector('script[src="'+w+'"]') == null) {
+    var s = d.createElement("script");
+    s.src = w;
+    s.onload = v;
+    s.onerror = v;
+    d.body.appendChild(s);
+  }
+</script>
+
+<style>
+  .tally-form-wrapper {
+    max-width: 1000px; /* Adjust to match your site's content width */
+    width: 100%;
+    margin: 0 auto; /* Centers the form */
+    padding: 1.5rem;
+    background-color: white; /* Always white */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid #e5e7eb; /* Light gray border */
+  }
+
+  /* Prevent dark mode from changing the background */
+  @media (prefers-color-scheme: dark) {
+    .tally-form-wrapper {
+      background-color: white !important; 
+    }
+  }
+
+  .tally-form-container {
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+  }
+</style>
+
+
+
+
+
+  <!-- Features2 Widget ************** -->
+
+  <!-- 
+  <Features2
+    title="We are here to help!"
+    items={[
+      {
+        title: 'General support',
+        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
+      },
+      {
+        title: 'Contact sales',
+        description:
+          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+      },
+      {
+        title: 'Technical support',
+        description:
+          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+      },
+      {
+        title: 'Phone',
+        description: '+1 (234) 567-890',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Email',
+        description: 'contact@support.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Location',
+        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  -->
+</Layout>
